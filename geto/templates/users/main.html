@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+
+
+Here is main.html.
+
+
+<form action="{% url 'users:main' %}" method='post'>
+  {% csrf_token %}
+  <input type="input" name="username" placeholder="username">
+  <input type="password" name="password" placeholder="password">
+  <input type="submit" name="login">
+</form>
+
+

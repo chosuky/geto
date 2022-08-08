@@ -44,7 +44,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 DATABASES = {
     "default": env.db(
         "DATABASE_URL",
-        default="postgres://localhost/geto",
+        default="postgres://postgres:whtjdrbs!1@localhost:5432/geto",
     ),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
@@ -80,8 +80,9 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "geto.users",
+    "geto.users.apps.UsersConfig",
     # Your stuff: custom apps go here
+    "geto.posts.apps.PostsConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
